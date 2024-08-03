@@ -22,7 +22,7 @@ const Tab = styled.button`
 `;
 
 const Navbar = () => {
-    const types = ['Crop Listing', 'Seasonal Recipe', 'My Cart']
+    const types = ['Crop Listing', 'Seasonal Recipe', 'My Cart', 'Fridge Recipe Creator']
     const [active, setActive] = useState(types[0])
   return (
     <>
@@ -45,6 +45,14 @@ const Navbar = () => {
     {active === 'Seasonal Recipe' && 
     <div>
       <Bot />
+      </div>}
+    {active === 'My Cart' && 
+    <div>
+      <p>The crops I want</p>
+      </div>}
+    {active === 'Fridge Recipe Creator' && 
+    <div>
+      <p>Object Detection Software</p>
       </div>}
     </>
 
