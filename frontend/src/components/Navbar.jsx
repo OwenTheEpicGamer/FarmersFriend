@@ -6,6 +6,7 @@ import styled from "styled-components"
 const Tab = styled.button`
   padding: 10px 30px;
   cursor: pointer;
+  font-size: 16px;
   opacity: 0.6;
   background: white;
   border: 0;
@@ -21,7 +22,7 @@ const Tab = styled.button`
 `;
 
 const Navbar = () => {
-    const types = ['Crop Listing', 'Seasonal Recipe']
+    const types = ['Crop Listing', 'Seasonal Recipe', 'My Cart']
     const [active, setActive] = useState(types[0])
   return (
     <>

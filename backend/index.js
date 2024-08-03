@@ -1,6 +1,7 @@
 const express = require ('express')
 const { MongoClient } = require("mongodb");
 const { OpenAI } = require("openai");
+const { marked } = require("marked")
 
 const app = express();
 app.use(express.json());
@@ -49,7 +50,7 @@ app.get('/recipe', async (req, res) => {
                 "messages": [
                     {
                         "role": "system", 
-                        "content": "You are a recipe making tool. You will be given a list of ingredients separated by commas, and using only the first things in the list, generate me a recipe idea"
+                        "content": "You are a recipe making tool. You will be given a list of ingredients separated by commas, and using only the first things in the list, generate a recipe idea. Format it as a list with a bolded title, a section for ingredients, and a section for steps."
                     },
                     {
                         "role": "user", 
@@ -66,7 +67,7 @@ app.get('/recipe', async (req, res) => {
         });
 
         let data = await response.json(); 
-        res.send(data.choices[0].message.content)
+        res.send(marked.parse(data.choices[0].message.content))
 
     } catch (error) {
         console.error("Error occurred:", error);
