@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import Listings from './components/Listings'
+import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Listings></Listings>
+    <Navbar/>
     </>
   )
 }

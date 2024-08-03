@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
+import './Listings.css'
 
 const Listings = () => {
-    const [list, setList] = useState([]);
     fetch('http://localhost:3001/listings', {
         method: "GET",
     })
@@ -13,26 +13,36 @@ const Listings = () => {
         console.log(list)
     })
 
+    const [list, setList] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const filteredList = list.filter(item =>
+        item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                {list.map((item, index) => (
-                    <tr key={index}>
-                        <td>{item.name}</td>
-                        <td>{item.price}</td>
-                        <td>{item.quantity}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    )
+        <>
+            <h1>Current Listings</h1>
+            <input
+            className='search'
+                type="text"
+                placeholder='search items'
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <div className='itemContainer'>
+                <div className='grid'>
+                    {filteredList.map((item, index) => (
+                        <div className='box' key={index}>
+                            <h2>{item.name}</h2>
+                            <p>Price: ${item.price}</p>
+                            <p>Quantity: {item.quantity}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default Listings;
