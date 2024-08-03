@@ -65,7 +65,7 @@ app.get('/recipe', async (req, res) => {
             })
         });
 
-        let data = await response.json();
+        let data = await response.json(); 
         res.send(data.choices[0].message.content)
 
     } catch (error) {

@@ -1,20 +1,27 @@
 import React, { useState } from 'react'
 
 const Bot = () => {
+  const [recipe, setRecipe] = useState();
+  const [gotRecipe, setGotRecipe] = useState(false)
 
-  fetch('http://localhost:3001/recipe', {
-    method: "GET",
+  if(!gotRecipe) {
+    setGotRecipe(true)
+    fetch('http://localhost:3001/recipe', {
+      method: "GET",
+    })
+    .then((res) => {
+      return res.text();
+    })
+    .then(data => {
+      console.log(data)
+      setRecipe(data)
   })
-  .then((res) => {
-    return res.json();
-  })
-  .then(data => {
-    console.log(data)
-})
+  }
   return (
     <>
     <div>
       <p>Fard</p>
+      <p>{recipe}</p>
     </div>
     </>
   )
