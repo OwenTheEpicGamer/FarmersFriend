@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './Listings.css'
+import Welcome from './Welcome.jsx';
 
 const Listings = () => {
     fetch('http://localhost:3001/listings', {
@@ -22,6 +23,7 @@ const Listings = () => {
 
     return (
         <>
+            <Welcome></Welcome>
             <h1>Current Listings</h1>
             <input
             className='search'

@@ -1,0 +1,8 @@
+.Welcome-Box{
+    background-image: url("/src/img/FarmersMarket.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid red;
+    width: 100%;
+    height: 30vh;
+}
