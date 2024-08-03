@@ -26,7 +26,7 @@ const Listings = () => {
             <input
             className='search'
                 type="text"
-                placeholder='search items'
+                placeholder='Search items'
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />

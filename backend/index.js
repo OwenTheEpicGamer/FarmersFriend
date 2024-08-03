@@ -22,7 +22,7 @@ const database = client.db('listings');
 const crops = database.collection('crops');
 
 app.get('/listings', async (req, res) => {
-    console.log("TEST")
+    //console.log("TEST")
     await client.connect();
     const thing = await crops.find({}).toArray();
     res.send(thing)
