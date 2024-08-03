@@ -1,23 +1,32 @@
 import './QuantityBtn.css';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const QuantityBtn = (limit) => {
+const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
     const [count, setCount] = useState(0);
-    function increase(){
+    function increase() {
         setCount(count + 1);
+        setTotalPrice(totalPrice+Number(item.price))
+        
     }
-    function decrease(){
-        if(count > 0){
+    function decrease() {
+        if (count > 0) {
             setCount(count - 1);
+            setTotalPrice(totalPrice-Number(item.price));
+            
         }
     }
     return <>
-    <div class = "container">
-        <p>Quantity: </p>
-        <button onClick = {decrease} class = "minus">-</button>
-        <p class="count-num">{count}</p>
-        <button onClick = {increase} class = "plus">+</button>
-    </div>
+        <div className='box'>
+            <h2>{item.name}</h2>
+            <p>Price: ${item.price}</p>
+            <div class="container">
+                <p>Quantity: </p>
+                <button onClick={decrease} class="minus">-</button>
+                <p class="count-num">{count}</p>
+                <button onClick={increase} class="plus">+</button>
+            </div>
+            {/* <p>Quantity: {item.quantity}</p> */}
+        </div>
     </>
 };
 

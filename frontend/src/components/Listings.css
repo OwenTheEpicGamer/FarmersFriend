@@ -44,3 +44,42 @@ input[type="text"] {
     box-sizing: border-box;
     border: 2px solid grey;
 }
+.cost-container{
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.total-price-1{
+    width: 115px;
+    height: 50px;
+    text-align: center;
+    line-height: 2.5em;
+
+    background-color: rgb(73, 116, 78);
+    color:white;
+
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    border-radius: 1.5rem;
+    margin-left: 35vw;
+
+    z-index: 100;
+}
+.total-price-2{
+    width: 175px;
+    height: 50px;
+    text-indent: 4.5rem;
+    
+    
+    line-height: 2.5em;
+
+    background-color: #ddefdb;
+    color:black;
+
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    margin-left: -3rem;
+    z-index: 1;
+}
