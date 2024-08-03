@@ -33,8 +33,12 @@ app.get('/recipe', async (req, res) => {
     try {
         await client.connect();
         const thing = await crops.find({}).toArray();
+        const cropNames = thing.map(crop => crop.name);
+
         const url = "https://api.openai.com/v1/chat/completions";
         const bearer = 'Bearer ' + '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';
+
+        console.log(cropNames.toString())
 
         let response = await fetch(url, {
             method: 'POST',
@@ -47,11 +51,11 @@ app.get('/recipe', async (req, res) => {
                 "messages": [
                     {
                         "role": "system", 
-                        "content": "You are a recipe making tool. You will be given a list of ingredients, and using the first thing in the list, generate me a recipe idea"
+                        "content": "You are a recipe making tool. You will be given a list of ingredients separated by commas, and using only the first three things in the list, generate me a recipe idea"
                     },
                     {
                         "role": "user", 
-                        "content": JSON.stringify(thing), // Ensure 'thing' is properly formatted as JSON
+                        "content": cropNames.toString(),
                     }
                 ],
                 "max_tokens": 4096,
