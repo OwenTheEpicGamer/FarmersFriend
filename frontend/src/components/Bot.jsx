@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Bot = () => {
   const [recipe, setRecipe] = useState();
@@ -10,18 +10,15 @@ const Bot = () => {
       method: "GET",
     })
     .then((res) => {
-      return res.text();
+      return res.text()
     })
     .then(data => {
-      console.log(data)
       setRecipe(data)
   })
   }
   return (
     <>
-    <div>
-      <p>Fard</p>
-      <p>{recipe}</p>
+    <div dangerouslySetInnerHTML={{ __html: recipe}}>
     </div>
     </>
   )
