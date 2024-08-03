@@ -3,7 +3,10 @@ import './Welcome.css';
 function Welcome(){
     return(
         <div class = "Welcome-Box">
-            <h1>Hello</h1>
+            <div class ="slogan">
+                <p>From Farm to Table, Without the Waste</p>
+            </div>
+            
         </div>
     );
 }
