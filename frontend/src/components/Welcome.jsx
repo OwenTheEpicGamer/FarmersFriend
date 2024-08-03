@@ -1,5 +1,4 @@
 import './Welcome.css';
-
 function Welcome(){
     return(
         <div class = "Welcome-Box">

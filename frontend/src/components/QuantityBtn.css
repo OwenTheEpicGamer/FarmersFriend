@@ -1,0 +1,40 @@
+.minus{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(202, 82, 82);
+    border-radius: 0.5rem;
+    border: none;
+    margin-left: 1rem;
+    margin-right: -0.5rem;
+    text-align: center;
+    z-index: 2;
+}
+.minus:hover{
+    background-color: rgb(169, 74, 74);
+}
+.plus{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(98, 202, 121);
+    border-radius: 0.5rem;
+    border: none;
+    margin-left: -0.5rem;
+    text-align: center;
+    z-index: 1;
+}
+.plus:hover{
+    background-color: rgb(75, 155, 92);
+}
+.container{
+    display: flex;
+    align-items: center;
+    
+}
+.count-num{
+    width: 50px;
+    height: 21px;
+    background-color: white;
+    border: 2px solid white;
+    text-align: center;
+    z-index: 0;
+}
