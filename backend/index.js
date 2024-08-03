@@ -38,8 +38,6 @@ app.get('/recipe', async (req, res) => {
         const url = "https://api.openai.com/v1/chat/completions";
         const bearer = 'Bearer ' + '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';
 
-        console.log(cropNames.toString())
-
         let response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -68,7 +66,7 @@ app.get('/recipe', async (req, res) => {
         });
 
         let data = await response.json();
-        res.send(data.choices[0].message.content);
+        res.send(data.choices[0].message.content)
 
     } catch (error) {
         console.error("Error occurred:", error);
@@ -77,9 +75,6 @@ app.get('/recipe', async (req, res) => {
         await client.close();
     }
 });
-
-
-
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
