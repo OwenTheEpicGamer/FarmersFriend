@@ -51,7 +51,7 @@ app.get('/recipe', async (req, res) => {
                 "messages": [
                     {
                         "role": "system", 
-                        "content": "You are a recipe making tool. You will be given a list of ingredients separated by commas, and using only the first three things in the list, generate me a recipe idea"
+                        "content": "You are a recipe making tool. You will be given a list of ingredients separated by commas, and using only the first things in the list, generate me a recipe idea"
                     },
                     {
                         "role": "user", 
