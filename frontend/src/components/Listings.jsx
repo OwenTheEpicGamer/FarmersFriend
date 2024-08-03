@@ -39,7 +39,7 @@ const Listings = () => {
                         <div className='box' key={index}>
                             <h2>{item.name}</h2>
                             <p>Price: ${item.price}</p>
-                            <QuantityBtn ></QuantityBtn>
+                            <QuantityBtn></QuantityBtn>
                             {/* <p>Quantity: {item.quantity}</p> */}
                         </div>
                     ))}

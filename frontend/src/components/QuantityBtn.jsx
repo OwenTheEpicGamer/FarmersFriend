@@ -1,7 +1,7 @@
 import './QuantityBtn.css';
 import React, {useState} from 'react';
 
-const QuantityBtn = () => {
+const QuantityBtn = (limit) => {
     const [count, setCount] = useState(0);
     function increase(){
         setCount(count + 1);
