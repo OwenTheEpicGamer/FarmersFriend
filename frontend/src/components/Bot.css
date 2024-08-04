@@ -1,20 +1,30 @@
+.parent{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
 
 .bot-bg{
-    background-image: url("src/img/bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    
+    overflow: hidden;
+    margin-left: -48px;
+    width: 110vw;
+    height: 120vh;
+}
+.recipe-text{
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
 
 }
 
 ul li{
-    
+    overflow: hidden;
     display: inline-block;
     position: relative;
     align-items: center;
     
     padding: 1rem 2rem;
-    margin: 1.5rem 2rem;
+    margin: 1.5rem 1rem;
     justify-content: space-around;
     border-radius: .3rem;
     background-color: rgb(178, 229, 185, 1);
@@ -22,5 +32,6 @@ ul li{
     font-weight: bold;
 }
 ul ol{
+    overflow: hidden;
     padding: 1rem 1rem;
 }

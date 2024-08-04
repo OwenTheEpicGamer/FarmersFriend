@@ -18,11 +18,11 @@ const Bot = () => {
   }
   return (
     <>
-    <div>
-      <div class="bot-bg" dangerouslySetInnerHTML={{ __html: recipe }}></div>
+    <div class = "parent">
+      <img class = "bot-bg" src = "src/img/bg.jpg"/>
+      <div class = "recipe-text" dangerouslySetInnerHTML={{ __html: recipe }}></div>
     </div>
     </>
   )
 }
-
 export default Bot;
