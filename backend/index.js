@@ -1,5 +1,5 @@
 const express = require ('express')
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 const { OpenAI } = require("openai");
 const { marked } = require("marked")
 
@@ -77,6 +77,25 @@ app.get('/recipe', async (req, res) => {
         await client.close();
     }
 });
+
+app.patch('/update/:id', async (req, res) => {
+    const { id } = req.params;
+    const { quantity } = req.body;
+
+    if(!ObjectId.isValid(id)) {
+        console.log('Error with Id')
+    }
+    try {
+        const result = await crops.updateOne(
+            { _id: ObjectId.createFromHexString(id)},
+            { $set: {quantity: quantity} }
+        );
+        if(result.matchedCount == 0) res.status(404).json({ error: 'Document not found'});
+        else res.status(200).json({ message: 'Document updated'})
+    } catch (error) {
+        console.error('Error', error);
+    }
+})
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

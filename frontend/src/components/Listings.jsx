@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import './Listings.css'
 import QuantityBtn from './QuantityBtn';
 import Welcome from './Welcome.jsx';
-import Submit from './Submit.jsx';
 
 const Listings = () => {   
     useEffect(() => {
@@ -47,7 +46,6 @@ const Listings = () => {
                 <div class = "cost-container">
                     <p class = "total-price-1">Total Cost</p>
                     <p class = "total-price-2">${totalPrice.toFixed(2)}</p>
-                    <Submit></Submit>
                 </div>
             </div>
         </>

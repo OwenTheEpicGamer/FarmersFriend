@@ -82,3 +82,18 @@ input[type="text"] {
     margin-left: -2.5rem;
     z-index: 1;
 }
+.submit-btn{
+    width: 100px;
+    height: 45px;
+    background-color: rgb(69, 69, 216);
+    border-radius: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    margin-left: 5rem;
+}
+
+.submit-btn:hover{
+    background-color: rgb(43, 43, 155);
+}
