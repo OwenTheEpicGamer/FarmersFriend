@@ -23,9 +23,8 @@ const database = client.db('listings');
 const crops = database.collection('crops');
 
 app.get('/listings', async (req, res) => {
-    //console.log("TEST")
     await client.connect();
-    const thing = await crops.find({}).toArray().sort((a, b) => b.quantity - a.quantity);
+    const thing = await crops.find({}).toArray();
     res.send(thing)
 
 })
@@ -34,6 +33,8 @@ app.get('/recipe', async (req, res) => {
     try {
         await client.connect();
         const thing = (await crops.find({}).toArray());
+        thing.sort((a, b) => b.quantity - a.quantity);
+
         const cropNames = thing.map(crop => crop.name);
 
         const url = "https://api.openai.com/v1/chat/completions";
