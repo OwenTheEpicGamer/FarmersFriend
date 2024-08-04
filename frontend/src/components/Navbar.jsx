@@ -25,7 +25,6 @@ const Tab = styled.button`
 
 const Navbar = () => {
     const types = ['Crop Listing', 'Seasonal Recipe', 'Tasty Trivia']
-    const types = ['Offers', 'Crop Listing', 'Seasonal Recipe', 'My Crops']
     const [active, setActive] = useState(types[0])
   return (
     <>
