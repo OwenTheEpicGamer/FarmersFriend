@@ -1,0 +1,42 @@
+export const data = [
+    {question: "What proportion of food bought intended for consumption is wasted each year?",
+        option1: "None!",
+        option2: "One Third",
+        option3: "One Fourth",
+        option4: "One Fifth",
+        ans: 4,
+        funFact: "This amounts to about 1.3 billion tons of food wasted annually, which is enough to feed 3 billion people!"
+    },
+    {question: "How much greenhouse gases approximately does food waste account for each year?",
+        option1: "Thousands of tonnes",
+        option2: "Millions of tonnes",
+        option3: "Billions of tonnes",
+        option4: "Trillions of tonnes",
+        ans: 3,
+        funFact: ""
+    },
+    {question: "Which food item is most commonly wasted in households?",
+        option1: "Milk",
+        option2: "Bread",
+        option3: "Potatoes",
+        option4: "Apples",
+        ans: 2,
+        funFact: "24 MILLION slices of bread are thrown away every day in the UK as waste."
+    },
+    {question: "About how much water is wasted annually due to food waste in the United States?",
+        option1: "20%",
+        option2: "50%",
+        option3: "10%",
+        option4: "30%",
+        ans: 1,
+        funFact: "The water wasted in growing and producing food that gets discarded could fill 7 million swimming pools!"
+    },
+    {question: "How much money does the average American family lose each year due to food waste?",
+        option1: "$100",
+        option2: "$750",
+        option3: "$1500",
+        option4: "$3000",
+        ans: 3,
+        funFact: ""
+    },
+]
