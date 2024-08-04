@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
   });
 
 
-const uri = "mongodb+srv://owenguo66:8OKpiSSDfEJupMCq@farmerfriend.rribdlm.mongodb.net/";
+const uri = "mongokey";
 const client = new MongoClient(uri);
 
 const database = client.db('listings');
@@ -38,7 +38,7 @@ app.get('/recipe', async (req, res) => {
         const cropNames = thing.map(crop => crop.name);
 
         const url = "https://api.openai.com/v1/chat/completions";
-        const bearer = 'Bearer ' + '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';
+        const bearer = 'Bearer ' + 'gpt-key';
 
         let response = await fetch(url, {
             method: 'POST',
