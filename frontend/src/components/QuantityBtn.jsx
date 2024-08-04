@@ -20,6 +20,7 @@ const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
         <div className='box'>
             <h2>{item.name}</h2>
             <p>Price: ${item.price}</p>
+            <p>Qauntity: {item.quantity}</p>
             <div class="container">
                 <p>Quantity: </p>
                 <button onClick={decrease} class="minus">-</button>
