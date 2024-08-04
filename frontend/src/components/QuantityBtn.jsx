@@ -5,9 +5,11 @@ const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
     const [count, setCount] = useState(0);
 
     function increase() {
-        setCount(count + 1);
-        setTotalPrice(totalPrice+Number(item.price))
-        item.quantity -=1;
+        if(item.quantity > 0){
+            setCount(count + 1);
+            setTotalPrice(totalPrice+Number(item.price))
+            item.quantity -=1;
+        }   
     }
     function decrease() {
         if (count > 0) {

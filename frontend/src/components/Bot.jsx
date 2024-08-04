@@ -24,5 +24,4 @@ const Bot = () => {
     </>
   )
 }
-
 export default Bot;
