@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
     const [count, setCount] = useState(0);
+
     function increase() {
         setCount(count + 1);
         setTotalPrice(totalPrice+Number(item.price))

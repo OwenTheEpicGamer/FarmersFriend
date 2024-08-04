@@ -24,11 +24,6 @@ const Listings = () => {
     const filteredList = list.filter(item =>
         item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
-    // useEffect(() => {
-    //     console.log(totalPrice)
-    // }, [])
-
     return (
         <>
             <Welcome></Welcome>
@@ -46,6 +41,7 @@ const Listings = () => {
                         <React.Fragment key={index}>
                             <QuantityBtn item={item} totalPrice={totalPrice} setTotalPrice={setTotalPrice}/>
                         </React.Fragment>
+                        
                     ))}
                 </div>
                 <div class = "cost-container">
