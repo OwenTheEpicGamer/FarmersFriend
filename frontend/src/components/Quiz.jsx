@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import './Quizz.css';
 import {data} from '../../../backend/QuizData';
-import ReactDOM from "react-dom/client";
+
 const Quiz = () => {
     let [index, setIndex] = useState(0);
     let [question, setQuestion] = useState(data[index]);
     let [lock, setLock] = useState(false);
+    let [score, setScore] = useState(0);
 
     let Option1 = useRef(null);
     let Option2 = useRef(null);
@@ -13,42 +14,53 @@ const Quiz = () => {
     let Option4 = useRef(null);
 
     let option_array = [Option1, Option2, Option3, Option4];
-
     const checkAns = (e, ans) =>{
         if(lock === false){
-            if(data[index].ans === ans){
+            if(question.ans === ans){
                 console.log("Correct");
-                e.target.id.add("correct");
+                e.target.setAttribute('id', "correct");
+                //e.target.classList.add("correct");
                 setLock(true);
+                setScore(prev=>prev+1);
             } else{
                 console.log("Wrong");
-                e.target.id.add("wrong");
+                e.target.setAttribute('id', "wrong");
+                //e.target.classList.add("wrong");
                 setLock(true);
+                //console.log(option_array[question.ans - 1].current.classList);
+                option_array[question.ans - 1].current.setAttribute('id', "correct");
             }
         }
-        
+        if(data[index].funFact !== ""){
+            alert(data[index].funFact);
+        }
     }
     const nextQ = () => {
-        const idx = index + 1
-        const  nQuestion = question + 1
-        if(idx < data.length){
-            setIndex(idx); setQuestion(nQuestion)
-        }
-            
-        else alert("You have completed the quiz")
+        console.log(index);
+        if(index < data.length - 1){
+            if(lock===true){
+                setIndex(++index);
+                setQuestion(data[index]);
+                setLock(false);
+                option_array.map((option) =>{
+                    option.current.setAttribute('id', '');
+                    return null;
+                })
+            }
+        }  else alert("You have completed the quiz, you scored " + score + " out of " + data.length);
         console.log(data.length)
     }
     return(
         <div className = 'container-quiz'>
-            <h1>Welcome to Tasty Trivia!!!</h1>
-            <h2>{index + 1}.{data[index].question}</h2>
+            <h1 class = "welcome-quiz">Welcome to Tasty Trivia!!!</h1>
+            <h2>{index + 1}. {question.question}</h2>
             <ul id>
-                <li onClick = {(e)=>{checkAns(e,1)}}>{data[index].option1}</li>
-                <li onClick = {(e)=>{checkAns(e,2)}}>{data[index].option2}</li>
-                <li onClick = {(e)=>{checkAns(e,3)}}>{data[index].option3}</li>
-                <li onClick = {(e)=>{checkAns(e,4)}}>{data[index].option4}</li>
+                <li ref = {Option1} onClick = {(e)=>{checkAns(e,1)}}>{question.option1}</li>
+                <li ref = {Option2} onClick = {(e)=>{checkAns(e,2)}}>{question.option2}</li>
+                <li ref = {Option3} onClick = {(e)=>{checkAns(e,3)}}>{question.option3}</li>
+                <li ref = {Option4} onClick = {(e)=>{checkAns(e,4)}}>{question.option4}</li>
             </ul>
-            <button onClick={nextQ}>Next</button>
+            <button onClick={nextQ}>NEXT</button>
         </div>
     )
 }

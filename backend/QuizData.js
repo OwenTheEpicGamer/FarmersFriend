@@ -1,9 +1,9 @@
 export const data = [
     {question: "What proportion of food bought intended for consumption is wasted each year?",
         option1: "None!",
-        option2: "One Third",
-        option3: "One Fourth",
-        option4: "One Fifth",
+        option2: "One Third (1/3)",
+        option3: "One Fourth (1/4)",
+        option4: "One Fifth (1/5)",
         ans: 4,
         funFact: "This amounts to about 1.3 billion tons of food wasted annually, which is enough to feed 3 billion people!"
     },
