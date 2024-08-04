@@ -13,32 +13,42 @@ const Quiz = () => {
     let Option4 = useRef(null);
 
     let option_array = [Option1, Option2, Option3, Option4];
+
     const checkAns = (e, ans) =>{
         if(lock === false){
-            if(question.ans === ans){
+            if(data[index].ans === ans){
                 console.log("Correct");
-                e.target.classList.add("correct");
+                e.target.id.add("correct");
                 setLock(true);
             } else{
                 console.log("Wrong");
-                e.target.classList.add("wrong");
+                e.target.id.add("wrong");
                 setLock(true);
-                option_array[question.ans - 1].current.classList.add("correct");
             }
         }
         
     }
+    const nextQ = () => {
+        const idx = index + 1
+        const  nQuestion = question + 1
+        if(idx < data.length){
+            setIndex(idx); setQuestion(nQuestion)
+        }
+            
+        else alert("You have completed the quiz")
+        console.log(data.length)
+    }
     return(
         <div className = 'container-quiz'>
             <h1>Welcome to Tasty Trivia!!!</h1>
-            <h2>{index + 1}.{question.question}</h2>
+            <h2>{index + 1}.{data[index].question}</h2>
             <ul id>
-                <li onClick = {(e)=>{checkAns(e,1)}}>{question.option1}</li>
-                <li onClick = {(e)=>{checkAns(e,2)}}>{question.option2}</li>
-                <li onClick = {(e)=>{checkAns(e,3)}}>{question.option3}</li>
-                <li onClick = {(e)=>{checkAns(e,4)}}>{question.option4}</li>
+                <li onClick = {(e)=>{checkAns(e,1)}}>{data[index].option1}</li>
+                <li onClick = {(e)=>{checkAns(e,2)}}>{data[index].option2}</li>
+                <li onClick = {(e)=>{checkAns(e,3)}}>{data[index].option3}</li>
+                <li onClick = {(e)=>{checkAns(e,4)}}>{data[index].option4}</li>
             </ul>
-            <button>Next</button>
+            <button onClick={nextQ}>Next</button>
         </div>
     )
 }
