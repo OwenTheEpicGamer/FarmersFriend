@@ -1,0 +1,26 @@
+
+.bot-bg{
+    background-image: url("src/img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+}
+
+ul li{
+    
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    
+    padding: 1rem 2rem;
+    margin: 1.5rem 2rem;
+    justify-content: space-around;
+    border-radius: .3rem;
+    background-color: rgb(178, 229, 185, 1);
+    color: black;
+    font-weight: bold;
+}
+ul ol{
+    padding: 1rem 1rem;
+}

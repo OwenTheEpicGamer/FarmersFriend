@@ -6,13 +6,13 @@ const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
     function increase() {
         setCount(count + 1);
         setTotalPrice(totalPrice+Number(item.price))
-        
+        item.quantity -=1;
     }
     function decrease() {
         if (count > 0) {
             setCount(count - 1);
             setTotalPrice(totalPrice-Number(item.price));
-            
+            item.quantity +=1; // whata does this update
         }
     }
     return <>

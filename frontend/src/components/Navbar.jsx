@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Listings from './Listings.jsx'
 import Bot from './Bot.jsx'
+import './Bot.css';
 import styled from "styled-components"
 
 const Tab = styled.button`
@@ -43,9 +44,12 @@ const Navbar = () => {
         <Listings />
         </div>}
     {active === 'Seasonal Recipe' && 
-    <div>
+    <div class = "bot-bg">
+      <div>
       <Bot />
-      </div>}
+      </div>
+    </div>
+    }
     {active === 'My Cart' && 
     <div>
       <p>The crops I want</p>
