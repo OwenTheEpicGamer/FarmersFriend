@@ -39,6 +39,46 @@ const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
     }
     return <>
         <div className='box'>
+              {/* row 1 */}
+              {item.name === "Corn" ? (
+                <div><img class = "image1" src = "src\img\corn.jpg"/></div>
+            ): null}
+            {item.name === "Tomato" ? (
+                <div><img class = "image1" src = "src\img\tomato.jpg"/></div>
+            ): null}
+            {item.name === "Bread" ? (
+                <div><img class = "image1" src = "src\img\bread.jpg"/></div>
+            ): null}
+            {/* row 2 */}
+            {item.name === "Cheese" ? (
+                <div><img class = "image1" src = "src\img\cheese.jpg"/></div>
+            ): null}
+            {item.name === "Eggs" ? (
+                <div><img class = "image1" src = "src\img\eggs.png"/></div>
+            ): null}
+            {item.name === "Peas" ? (
+                <div><img class = "image1" src = "src\img\peas.png"/></div>
+            ): null}
+            {/* row 3 */}
+            {item.name === "Cherries" ? (
+                <div><img class = "image1" src = "src\img\cherry.png"/></div>
+            ): null}
+            {item.name === "Watermelon" ? (
+                <div><img class = "image1" src = "src\img\watermelon.png"/></div>
+            ): null}
+            {item.name === "Asparagus" ? (
+                <div><img class = "image1" src = "src\img\asparagus.png"/></div>
+            ): null}
+            {/* row 4 */}
+            {item.name === "Kale" ? (
+                <div><img class = "image1" src = "src\img\kale.png"/></div>
+            ): null}
+            {item.name === "Apple" ? (
+                <div><img class = "image1" src = "src\img\apple.png"/></div>
+            ): null}
+            {item.name === "Green Onions" ? (
+                <div><img class = "image1" src = "src\img\greenOnion.png"/></div>
+            ): null}
             <h2>{item.name}</h2>
             <p>Price: ${item.price}</p>
             <p>Quantity: {item.quantity}</p>

@@ -3,6 +3,7 @@ import Listings from './Listings.jsx'
 import Bot from './Bot.jsx'
 import './Bot.css';
 import styled from "styled-components"
+import Quiz from './Quiz.jsx';
 
 const Tab = styled.button`
   padding: 10px 30px;
@@ -23,6 +24,7 @@ const Tab = styled.button`
 `;
 
 const Navbar = () => {
+    const types = ['Crop Listing', 'Seasonal Recipe', 'Tasty Trivia']
     const types = ['Offers', 'Crop Listing', 'Seasonal Recipe', 'My Crops']
     const [active, setActive] = useState(types[0])
   return (
@@ -50,9 +52,9 @@ const Navbar = () => {
       </div>
     </div>
     }
-    {active === 'My Cart' && 
+    {active === 'Tasty Trivia' && 
     <div>
-      <p>The crops I want</p>
+      <Quiz></Quiz>
       </div>}
     </>
 
