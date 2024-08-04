@@ -82,6 +82,7 @@ const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
             <h2>{item.name}</h2>
             <p>Price: ${item.price}</p>
             <p>Quantity: {item.quantity}</p>
+            <p>Condition: {item.condition}</p>
             <div class="container">
                 <p>Buy: </p>
                 <button onClick={decrease} class="minus">-</button>
