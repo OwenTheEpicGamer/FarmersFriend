@@ -24,7 +24,7 @@ const QuantityBtn = ({item, totalPrice, setTotalPrice}) => {
             <p>Price: ${item.price}</p>
             <p>Qauntity: {item.quantity}</p>
             <div class="container">
-                <p>Quantity: </p>
+                <p>Buy: </p>
                 <button onClick={decrease} class="minus">-</button>
                 <p class="count-num">{count}</p>
                 <button onClick={increase} class="plus">+</button>
